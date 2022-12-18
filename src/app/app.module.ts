@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { InfobarComponent } from './components/infobar/infobar.component';
-import { EditorComponent } from './pages/editor/editor.component';
+import { EditorComponent } from './components/editor/editor.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 
 @NgModule({
