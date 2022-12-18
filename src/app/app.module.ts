@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollerComponent } from './components/scroller/scroller.component';
 import { InfobarComponent } from './components/infobar/infobar.component';
+import { ViewerComponent } from './pages/viewer/viewer.component';
+import { EditorComponent } from './pages/editor/editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScrollerComponent,
-    InfobarComponent
+    InfobarComponent,
+    ViewerComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
