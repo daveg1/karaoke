@@ -1,0 +1,22 @@
+:host {
+	display: contents;
+}
+
+.Scroller {
+	background-color: orange;
+	overflow-y: scroll;
+	padding: 2rem 5rem;
+	user-select: none;
+}
+
+.Scroller__Line {
+	cursor: pointer;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1.7;
+	transition: color 150ms ease-in-out;
+
+	&:hover {
+		color: white;
+	}
+}
