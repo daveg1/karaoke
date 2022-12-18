@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Lyrics } from 'src/app/interfaces/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
@@ -8,9 +9,9 @@ import { LyricsService } from 'src/app/services/lyrics.service';
 	styleUrls: ['./infobar.component.scss'],
 })
 export class InfobarComponent {
-	lyrics: Lyrics;
+	lyrics: BehaviorSubject<Lyrics>;
 
 	constructor(private lyricsService: LyricsService) {
-		this.lyrics = this.lyricsService.getLyrics();
+		this.lyrics = this.lyricsService.lyrics;
 	}
 }

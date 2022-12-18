@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Lyrics } from 'src/app/interfaces/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
@@ -8,10 +9,10 @@ import { LyricsService } from 'src/app/services/lyrics.service';
 	styleUrls: ['./scroller.component.scss'],
 })
 export class ScrollerComponent {
-	lyrics: Lyrics;
+	lyrics: BehaviorSubject<Lyrics>;
 
 	constructor(private readonly lyricsService: LyricsService) {
-		this.lyrics = this.lyricsService.getLyrics();
+		this.lyrics = this.lyricsService.lyrics;
 	}
 
 	scrollToLine(lineElem: HTMLElement): void {

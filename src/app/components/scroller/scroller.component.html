@@ -1,5 +1,5 @@
-<div class="Scroller">
-	<ng-container *ngFor="let line of lyrics.lines">
+<div class="Scroller" *ngIf="lyrics">
+	<ng-container *ngFor="let line of lyrics.value.lines">
 		<p #lineElem (click)="scrollToLine(lineElem)" class="Scroller__Line" >{{ line }}</p>
 	</ng-container>
 </div>
