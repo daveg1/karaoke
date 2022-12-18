@@ -4,11 +4,11 @@ import { Lyrics } from 'src/app/interfaces/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
 @Component({
-	selector: 'app-scroller',
-	templateUrl: './scroller.component.html',
-	styleUrls: ['./scroller.component.scss'],
+	selector: 'app-viewer',
+	templateUrl: './viewer.component.html',
+	styleUrls: ['./viewer.component.scss'],
 })
-export class ScrollerComponent {
+export class ViewerComponent {
 	lyrics: BehaviorSubject<Lyrics>;
 
 	constructor(private readonly lyricsService: LyricsService) {

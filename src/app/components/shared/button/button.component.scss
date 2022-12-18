@@ -1,0 +1,26 @@
+:host {
+	display: contents;
+}
+
+.Button {
+	align-items: center;
+	background-color: #ccc;
+	border-radius: 9in;
+	color: black;
+	cursor: pointer;
+	display: flex;
+	font-weight: bold;
+	font-size: 1rem;
+	gap: 0.5rem;
+	line-height: 2.5rem;
+	padding-inline: 0.75rem;
+
+	&:hover {
+		background-color: #ddd;
+	}
+
+	.Button__Icon {
+		height: 1.25rem;
+		// aspect-ratio: 1 / 1;
+	}
+}

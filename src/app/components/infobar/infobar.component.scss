@@ -1,6 +1,9 @@
 .Infobar {
+	align-items: baseline;
 	background-color: #181818;
 	color: white;
+	display: flex;
+	gap: 1rem;
 	font-size: 1.5rem;
 	padding: 1rem 5rem;
 }
