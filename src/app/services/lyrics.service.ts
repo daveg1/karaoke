@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Lyrics } from '../interfaces/Lyrics';
+import { mockLyrics } from '../interfaces/Lyrics.mock';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class LyricsService {
-
-  constructor() { }
+	getLyrics(): Lyrics {
+		return mockLyrics;
+	}
 }
