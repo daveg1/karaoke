@@ -22,7 +22,7 @@ export class InfobarComponent {
 
 	toggleEditor(): void {
 		if (this.router.url === '/') {
-			this.router.navigate(['edit']);
+			this.router.navigate(['edit', this.lyrics.value.songTitle]);
 			this.editButtonText = 'Save';
 		} else {
 			this.router.navigate(['']);

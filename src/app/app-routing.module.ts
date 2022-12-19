@@ -5,7 +5,8 @@ import { EditorComponent } from './components/editor/editor.component';
 
 const routes: Routes = [
 	{ path: '', component: ViewerComponent },
-	{ path: 'edit', component: EditorComponent },
+	{ path: 'edit/:song', component: EditorComponent },
+	{ path: '**', redirectTo: '' },
 ];
 
 @NgModule({

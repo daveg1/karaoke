@@ -1,3 +1,26 @@
+:host {
+	display: contents;
+}
+
 .Editor {
-	padding: 2rem;
+	overflow: hidden;
+}
+
+app-tabber {
+	height: 100%;
+
+	.Editor__Tab {
+		height: 100%;
+	}
+}
+
+textarea {
+	background-color: rgb(0 0 0 / 2%);
+	border: none;
+	height: 100%;
+	line-height: 2;
+	outline: 0;
+	padding: 0.5rem 2rem;
+	resize: none;
+	width: 100%;
 }

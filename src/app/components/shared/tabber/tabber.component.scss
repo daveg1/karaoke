@@ -1,11 +1,16 @@
 :host {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
 }
 
 .Tab__Buttons {
 	align-items: center;
+	box-shadow: 0 1px 4px rgb(0 0 0 / 5%);
 	display: flex;
 	gap: 1rem;
+	padding: 1rem 2rem;
+}
+
+.Tab__Pages {
+	height: 100%;
 }

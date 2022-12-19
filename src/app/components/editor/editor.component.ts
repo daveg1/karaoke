@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Lyrics } from 'src/app/interfaces/Lyrics';
+import { LyricsService } from 'src/app/services/lyrics.service';
 
 @Component({
 	selector: 'app-editor',
@@ -6,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./editor.component.scss'],
 })
 export class EditorComponent implements OnInit {
-	lyrics = 'hello';
+	lyrics?: Lyrics;
 
-	constructor() {}
+	constructor(
+		private readonly route: ActivatedRoute,
+		private readonly lyricsService: LyricsService
+	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.route.paramMap.subscribe((paramMap) => {
+			const song = paramMap.get('song') ?? '';
+
+			this.lyricsService.getLyrics(song).subscribe((lyrics) => {
+				this.lyrics = lyrics;
+			});
+		});
+	}
 }

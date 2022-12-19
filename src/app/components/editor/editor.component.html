@@ -1,9 +1,9 @@
-<div class="Editor">
+<div class="Editor" *ngIf="lyrics">
 	<app-tabber>
-		<div tab="Lyrics">
-			<textarea [value]="lyrics"></textarea>
+		<div class="Editor__Tab" tab="Lyrics">
+			<textarea [value]="lyrics.lines.join('\n')"></textarea>
 		</div>
-		<div tab="Sync">
+		<div class="Editor__Tab" tab="Sync">
 			<textarea [value]="'gay'"></textarea>
 		</div>
 	</app-tabber>

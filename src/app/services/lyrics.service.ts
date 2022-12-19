@@ -8,4 +8,8 @@ import { mockLyrics } from '../interfaces/Lyrics.mock';
 })
 export class LyricsService {
 	lyrics = new BehaviorSubject<Lyrics>(mockLyrics);
+
+	getLyrics(songTitle: string) {
+		return this.lyrics;
+	}
 }
