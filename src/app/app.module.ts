@@ -7,6 +7,8 @@ import { ViewerComponent } from './components/viewer/viewer.component';
 import { InfobarComponent } from './components/infobar/infobar.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { ButtonComponent } from './components/shared/button/button.component';
+import { TabberComponent } from './components/shared/tabber/tabber.component';
+import { TabDirective } from './components/shared/tabber/tab.directive';
 
 @NgModule({
 	declarations: [
@@ -16,6 +18,8 @@ import { ButtonComponent } from './components/shared/button/button.component';
 		ViewerComponent,
 		EditorComponent,
 		ButtonComponent,
+  TabberComponent,
+  TabDirective,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],

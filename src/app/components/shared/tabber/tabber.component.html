@@ -1,0 +1,9 @@
+<div class="Tab__Buttons">
+	<ng-container *ngFor="let tab of tabs">
+		<app-button [text]="tab.tab" (click)="switchTo(tab)"></app-button>
+	</ng-container>
+</div>
+
+<div class="Tab__Pages">
+	<ng-content></ng-content>
+</div>
