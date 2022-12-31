@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Lyrics } from 'src/app/interfaces/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
@@ -9,11 +9,20 @@ import { LyricsService } from 'src/app/services/lyrics.service';
 	styleUrls: ['./viewer.component.scss'],
 })
 export class ViewerComponent {
+	lyrics?: Lyrics;
 	lines?: string[];
 
-	constructor(private readonly lyricsService: LyricsService) {
-		this.lyricsService.getLyrics('Утренняя Гимнастика').subscribe((data) => {
-			this.lines = data.lyrics.trim().split('\n');
+	constructor(
+		private readonly route: ActivatedRoute,
+		private readonly lyricsService: LyricsService
+	) {
+		this.route.params.subscribe((params) => {
+			if (params['song']) {
+				this.lyricsService.getLyrics(params['song']).subscribe((data) => {
+					this.lyrics = data;
+					this.lines = data.lyrics.trim().split('\n');
+				});
+			}
 		});
 	}
 

@@ -11,6 +11,7 @@ import { EditorComponent } from './components/editor/editor.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { TabberComponent } from './components/shared/tabber/tabber.component';
 import { TabDirective } from './components/shared/tabber/tab.directive';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { TabDirective } from './components/shared/tabber/tab.directive';
 		ButtonComponent,
 		TabberComponent,
 		TabDirective,
+  HomeComponent,
 	],
 	imports: [
 		BrowserModule,
