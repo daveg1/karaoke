@@ -1,5 +1,5 @@
-<div class="Infobar" *ngIf="lyrics">
-	<div class="Infobar__Song">{{ lyrics.value.title }}</div>
+<div class="Infobar">
+	<div class="Infobar__Song">{{ title }}</div>
 
 	<app-button [text]="editButtonText" (click)="toggleEditor()"></app-button>
 </div>

@@ -1,5 +1,5 @@
 <div class="Editor" [formGroup]="form">
-	<button (click)="savelyrics()">Save</button>
+	<app-button (click)="savelyrics()" text="Save"></app-button>
 	<app-tabber>
 		<div class="Editor__Tab" tab="Lyrics">
 			<textarea formControlName="lyrics">asd</textarea>

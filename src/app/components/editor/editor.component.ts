@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Lyrics } from 'src/app/interfaces/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
@@ -14,6 +14,7 @@ export class EditorComponent implements OnInit {
 	form;
 
 	constructor(
+		private readonly router: Router,
 		private readonly route: ActivatedRoute,
 		private readonly lyricsService: LyricsService,
 		private readonly formBuilder: NonNullableFormBuilder
@@ -41,6 +42,8 @@ export class EditorComponent implements OnInit {
 
 		this.lyricsService
 			.updateLyrics(this.lyrics.title, this.form.controls.lyrics.value)
-			.subscribe(console.log);
+			.subscribe((_) => {
+				this.router.navigate(['../'], { relativeTo: this.route });
+			});
 	}
 }

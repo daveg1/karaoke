@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { Lyrics } from 'src/app/interfaces/Lyrics';
-import { LyricsService } from 'src/app/services/lyrics.service';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-infobar',
@@ -10,23 +7,15 @@ import { LyricsService } from 'src/app/services/lyrics.service';
 	styleUrls: ['./infobar.component.scss'],
 })
 export class InfobarComponent {
-	lyrics: BehaviorSubject<Lyrics>;
+	@Input() title = '';
 	editButtonText = 'Edit lyrics';
 
 	constructor(
-		private readonly lyricsService: LyricsService,
-		private readonly router: Router
-	) {
-		this.lyrics = this.lyricsService.lyrics;
-	}
+		private readonly router: Router,
+		private readonly route: ActivatedRoute
+	) {}
 
 	toggleEditor(): void {
-		if (this.router.url === '/') {
-			this.router.navigate(['edit', this.lyrics.value.title]);
-			this.editButtonText = 'Save';
-		} else {
-			this.router.navigate(['']);
-			this.editButtonText = 'Edit lyrics';
-		}
+		this.router.navigate(['edit'], { relativeTo: this.route });
 	}
 }
