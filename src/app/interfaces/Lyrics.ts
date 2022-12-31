@@ -1,4 +1,4 @@
 export interface Lyrics {
-	songTitle: string;
-	lines: string[];
+	title: string;
+	lyrics: string;
 }

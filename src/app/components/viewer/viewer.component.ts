@@ -9,10 +9,12 @@ import { LyricsService } from 'src/app/services/lyrics.service';
 	styleUrls: ['./viewer.component.scss'],
 })
 export class ViewerComponent {
-	lyrics: BehaviorSubject<Lyrics>;
+	lines?: string[];
 
 	constructor(private readonly lyricsService: LyricsService) {
-		this.lyrics = this.lyricsService.lyrics;
+		this.lyricsService.getLyrics('Утренняя Гимнастика').subscribe((data) => {
+			this.lines = data.lyrics.trim().split('\n');
+		});
 	}
 
 	scrollToLine(lineElem: HTMLElement): void {

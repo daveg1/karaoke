@@ -1,7 +1,8 @@
-<div class="Editor" *ngIf="lyrics">
+<div class="Editor" [formGroup]="form">
+	<button (click)="savelyrics()">Save</button>
 	<app-tabber>
 		<div class="Editor__Tab" tab="Lyrics">
-			<textarea [value]="lyrics.lines.join('\n')"></textarea>
+			<textarea formControlName="lyrics">asd</textarea>
 		</div>
 		<div class="Editor__Tab" tab="Sync">
 			<textarea [value]="'gay'"></textarea>
