@@ -1,3 +1,5 @@
-<ul>
-	<li><a routerLink="/Утренняя Гимнастика">Утренняя Гимнастика</a></li>
+<ul *ngIf="songs">
+	<li *ngFor="let song of songs">
+		<a [routerLink]="'/' + song">{{ song }}</a>
+	</li>
 </ul>

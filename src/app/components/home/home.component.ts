@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SongsService } from 'src/app/services/songs.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+	songs?: string[];
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	constructor(private readonly songsService: SongsService) {
+		this.songsService.getAllSongs().subscribe((data) => {
+			this.songs = data;
+		});
+	}
 }
