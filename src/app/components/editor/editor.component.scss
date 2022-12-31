@@ -3,7 +3,16 @@
 }
 
 .Editor {
+	display: flex;
+	flex-direction: column;
 	overflow: hidden;
+
+	&__Options {
+		display: flex;
+		gap: 1rem;
+		padding-inline: 2rem;
+		padding-block-start: 1rem;
+	}
 }
 
 app-tabber {

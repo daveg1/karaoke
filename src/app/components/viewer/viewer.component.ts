@@ -20,9 +20,23 @@ export class ViewerComponent {
 			if (params['song']) {
 				this.lyricsService.getLyrics(params['song']).subscribe((data) => {
 					this.lyrics = data;
-					this.lines = data.lyrics.trim().split('\n');
+					this.lines = this.parseLyrics(data.lyrics);
 				});
 			}
+		});
+	}
+
+	// Methods
+
+	parseLyrics(rawLyrics: string): string[] {
+		const lines = rawLyrics.trim().split('\n');
+
+		return lines.map((line) => {
+			if (line === '#instrumental') {
+				return '♪';
+			}
+
+			return line;
 		});
 	}
 

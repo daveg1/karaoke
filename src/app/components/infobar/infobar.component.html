@@ -1,4 +1,6 @@
 <div class="Infobar">
+	<app-button text="Home" (click)="back()"></app-button>
+
 	<div class="Infobar__Song">{{ title }}</div>
 
 	<app-button [text]="editButtonText" (click)="toggleEditor()"></app-button>

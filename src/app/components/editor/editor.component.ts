@@ -43,7 +43,11 @@ export class EditorComponent implements OnInit {
 		this.lyricsService
 			.updateLyrics(this.lyrics.title, this.form.controls.lyrics.value)
 			.subscribe((_) => {
-				this.router.navigate(['../'], { relativeTo: this.route });
+				this.back();
 			});
+	}
+
+	back(): void {
+		this.router.navigate(['../'], { relativeTo: this.route });
 	}
 }
