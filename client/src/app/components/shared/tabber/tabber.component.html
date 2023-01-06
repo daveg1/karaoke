@@ -1,6 +1,12 @@
-<div class="Tab__Buttons">
+<div class="Tabs">
 	<ng-container *ngFor="let tab of tabs">
-		<app-button [text]="tab.tab" (click)="switchTo(tab)"></app-button>
+		<div
+			class="Tab"
+			[ngClass]="tab.visible ? 'active' : ''"
+			(click)="switchTo(tab)"
+		>
+			{{ tab.tab }}
+		</div>
 	</ng-container>
 </div>
 

@@ -3,12 +3,25 @@
 	flex-direction: column;
 }
 
-.Tab__Buttons {
+.Tabs {
 	align-items: center;
 	box-shadow: 0 1px 4px rgb(0 0 0 / 5%);
 	display: flex;
-	gap: 1rem;
 	padding: 1rem 2rem;
+	padding-bottom: 0;
+
+	.Tab {
+		cursor: pointer;
+		padding: 0.5rem 1rem;
+
+		&.active {
+			background-color: #ddd;
+		}
+
+		&:hover {
+			background-color: #ededed;
+		}
+	}
 }
 
 .Tab__Pages {

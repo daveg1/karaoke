@@ -10,6 +10,10 @@ export class TabDirective {
 		this.hide();
 	}
 
+	get visible() {
+		return !this.element.nativeElement.hidden;
+	}
+
 	// TODO use templateRef and viewContainer to show/hide elements properly
 	hide() {
 		this.element.nativeElement.hidden = true;

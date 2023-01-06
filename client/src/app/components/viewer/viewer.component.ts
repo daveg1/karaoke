@@ -20,6 +20,7 @@ export class ViewerComponent {
 			if (params['song']) {
 				this.lyricsService.getLyrics(params['song']).subscribe((data) => {
 					this.lyrics = data;
+					console.log('parsing');
 					this.lines = this.parseLyrics(data.lyrics);
 				});
 			}
@@ -32,7 +33,10 @@ export class ViewerComponent {
 		const lines = rawLyrics.trim().split('\n');
 
 		return lines.map((line) => {
+			line = line.trim();
+
 			if (line === '#instrumental') {
+				console.log('found');
 				return '♪';
 			}
 
