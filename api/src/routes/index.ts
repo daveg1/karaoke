@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { lyricsRoutes } from './lyrics.route.js'
-import { songsRoutes } from './songs.route.js'
+import { lyricsRoutes } from './lyrics.route'
+import { songsRoutes } from './songs.route'
 
 const routes = Router()
 

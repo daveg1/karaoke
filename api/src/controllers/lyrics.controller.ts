@@ -1,8 +1,7 @@
 import { join, resolve } from 'node:path'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { currentDir } from '../helpers/directory.js'
 
-const lyricsDir = resolve(currentDir(import.meta), '../lyrics')
+const lyricsDir = resolve(__dirname, '../lyrics')
 
 export class LyricsController {
 	static getLyrics(title: string): string {

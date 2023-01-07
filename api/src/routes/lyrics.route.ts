@@ -1,5 +1,5 @@
 import { json, Router } from 'express'
-import { LyricsController } from '../controllers/lyrics.controller.js'
+import { LyricsController } from '../controllers/lyrics.controller'
 
 const lyricsRoutes = Router()
 
