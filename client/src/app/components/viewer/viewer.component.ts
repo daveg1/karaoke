@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Lyrics } from 'src/app/interfaces/Lyrics';
+import { Lyrics } from 'src/app/types/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
 @Component({
@@ -20,7 +20,6 @@ export class ViewerComponent {
 			if (params['song']) {
 				this.lyricsService.getLyrics(params['song']).subscribe((data) => {
 					this.lyrics = data;
-					console.log('parsing');
 					this.lines = this.parseLyrics(data.lyrics);
 				});
 			}
@@ -36,7 +35,6 @@ export class ViewerComponent {
 			line = line.trim();
 
 			if (line === '#instrumental') {
-				console.log('found');
 				return '♪';
 			}
 
