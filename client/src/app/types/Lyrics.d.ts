@@ -1,4 +1,4 @@
-export interface Lyrics {
+export type Lyrics = {
 	title: string;
 	lyrics: string;
-}
+};

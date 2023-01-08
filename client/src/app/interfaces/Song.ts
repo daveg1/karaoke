@@ -1,3 +1,0 @@
-type Song = {
-	title: string;
-};
