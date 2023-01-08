@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 const endpoint = 'http://localhost:8080/songs/';
 
@@ -7,9 +8,12 @@ const endpoint = 'http://localhost:8080/songs/';
 	providedIn: 'root',
 })
 export class SongsService {
-	constructor(private readonly http: HttpClient) {}
+	songs$ = new BehaviorSubject<Song[]>([]);
 
-	getAllSongs() {
-		return this.http.get<string[]>(endpoint + 'all');
+	constructor(private readonly http: HttpClient) {
+		this.http.get<Song[]>(endpoint + 'all').subscribe((data) => {
+			console.log('fetching songs');
+			this.songs$.next(data);
+		});
 	}
 }

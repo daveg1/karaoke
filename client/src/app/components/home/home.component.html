@@ -1,5 +1,30 @@
-<ul *ngIf="songs">
-	<li *ngFor="let song of songs">
-		<a [routerLink]="'/' + song">{{ song }}</a>
-	</li>
-</ul>
+<main>
+	<h1>Songs</h1>
+
+	<ng-container *ngIf="songs$ | async as songs; else emptyState">
+		<div class="Grid" *ngIf="songs.length; else emptyState" class="Songs">
+			<div class="Grid__Header">
+				<div class="Grid__Cell" style="width: 2rem; text-align: center">#</div>
+				<div class="Grid__Cell">Track</div>
+			</div>
+
+			<ng-container *ngFor="let song of songs; let i = index">
+				<div class="Grid__Row" (click)="open(song)">
+					<div class="Grid__Cell Grid__Cell--Index">
+						<span class="Song__Number">{{ i }}</span>
+						<span class="Song__Icon">➤</span>
+					</div>
+
+					<div class="Grid__Cell Song__Info">
+						<div class="Song__Title">{{ song.title }}</div>
+						<div class="Song__Artist">{{ song.artist }}</div>
+					</div>
+				</div>
+			</ng-container>
+		</div>
+	</ng-container>
+</main>
+
+<ng-template #emptyState>
+	<p>No songs found</p>
+</ng-template>

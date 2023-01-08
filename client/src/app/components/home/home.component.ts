@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SongsService } from 'src/app/services/songs.service';
 
 @Component({
@@ -7,11 +8,16 @@ import { SongsService } from 'src/app/services/songs.service';
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-	songs?: string[];
+	songs$;
 
-	constructor(private readonly songsService: SongsService) {
-		this.songsService.getAllSongs().subscribe((data) => {
-			this.songs = data;
-		});
+	constructor(
+		private readonly songsService: SongsService,
+		readonly router: Router
+	) {
+		this.songs$ = this.songsService.songs$;
+	}
+
+	open(song: Song) {
+		this.router.navigate(['/', song.title]);
 	}
 }
