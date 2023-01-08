@@ -19,7 +19,7 @@ export class InfobarComponent {
 		this.router.navigate(['edit'], { relativeTo: this.route });
 	}
 
-	back(): void {
-		this.router.navigate(['../'], { relativeTo: this.route });
+	goHome(): void {
+		this.router.navigate(['/']);
 	}
 }

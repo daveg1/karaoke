@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Lyrics } from 'src/app/interfaces/Lyrics';
+import { Lyrics } from 'src/app/types/Lyrics';
 import { LyricsService } from 'src/app/services/lyrics.service';
 
 @Component({
